@@ -6,13 +6,13 @@ class HelloWorld extends Component {
   render() {
     return (
       <>
-        <nav>
+        <div className="Maincontainer">
           <Home />
-        </nav>
-        <section>
-          <h1>Hello, Hector! love spaceballs</h1>
-          <MovieFetch />
-        </section>
+          <section>
+            <h1>Hello, Hector! love spaceballs</h1>
+            <MovieFetch />
+          </section>
+        </div>
       </>
     )
   }
