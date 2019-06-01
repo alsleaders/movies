@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Movie from './Movie'
+import MoviePoster from '../components/MoviePoster'
 
 class MovieFetch extends Component {
   state = {
@@ -29,12 +30,14 @@ class MovieFetch extends Component {
       <div>
         {this.state.movies.map((movie, index) => {
           return (
-            <Movie
-              key={index}
-              movie={movie.title}
-              description={movie.overview}
-              poster={movie.poster_path}
-            />
+            <main>
+              <Movie
+                key={index}
+                movie={movie.title}
+                description={movie.overview}
+              />
+              <MoviePoster poster={movie.poster_path} />
+            </main>
           )
         })}
       </div>

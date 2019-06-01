@@ -6,7 +6,6 @@ class TM_FILENAME_BASE extends Component {
       <>
         <h2>{this.props.movie}</h2>
         <p>{this.props.description}</p>
-        <img src={this.props.poster} />
       </>
     )
   }
