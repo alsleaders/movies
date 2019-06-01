@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
+import Movie from './Movie'
 
 class MovieFetch extends Component {
+  state = {
+    movies: []
+  }
+
   componentDidMount() {
     fetch(
       'https://api.themoviedb.org/3/movie/now_playing?api_key=1ee0e857f325866703436281f4225a69&language=en-US&page=1'
@@ -13,12 +18,27 @@ class MovieFetch extends Component {
         console.log(results)
         console.log(results.results)
         console.log(results.results[0].title)
-        return results
+        this.setState({
+          movies: results.results
+        })
       })
   }
   // this is going to need a map
   render() {
-    return <div />
+    return (
+      <div>
+        {this.state.movies.map((movie, index) => {
+          return (
+            <Movie
+              key={index}
+              movie={movie.title}
+              description={movie.overview}
+              poster={movie.poster_path}
+            />
+          )
+        })}
+      </div>
+    )
   }
 }
 
