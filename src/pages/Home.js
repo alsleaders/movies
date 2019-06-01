@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Movie from './Movie'
 import NavBar from '../pages/NavBar'
+import MovieFetch from './MovieFetch'
 
 class Home extends Component {
   render() {
@@ -11,9 +12,10 @@ class Home extends Component {
         <div>
           <Router>
             <Switch>
-              <Route path="/Movie" exact component={Movie}>
-                Movie
-              </Route>
+              <Route path="/" exact component={MovieFetch} />
+              <Route path="/movies/:movieId" component={Movie} />
+              <MovieFetch />
+              <Movie />
             </Switch>
           </Router>
         </div>

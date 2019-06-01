@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import Movie from './Movie'
 import MoviePoster from '../components/MoviePoster'
+// import RandomMovie from '../components/RandomMovie'
+import { Link } from 'react-router-dom'
+
+const random = Math.floor(Math.random() * 20)
 
 class MovieFetch extends Component {
   state = {
@@ -23,11 +27,18 @@ class MovieFetch extends Component {
           movies: results.results
         })
       })
+    console.log('I want an array')
+    console.log(this)
+    // console.log({movies[9]})
   }
   // this is going to need a map
   render() {
     return (
       <div>
+        <section>
+          This should just be a highlighted random movie
+          {/* <p>{{ movies[random] }}</p> */}
+        </section>
         {this.state.movies.map((movie, index) => {
           return (
             <main>
@@ -36,7 +47,9 @@ class MovieFetch extends Component {
                 movie={movie.title}
                 description={movie.overview}
               />
-              <MoviePoster poster={movie.poster_path} />
+              <Link to={`/movies/${movie.id}`}>
+                <MoviePoster poster={movie.poster_path} alt={movie.title} />
+              </Link>
             </main>
           )
         })}

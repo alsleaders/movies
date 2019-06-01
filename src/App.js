@@ -14,7 +14,6 @@ class App extends Component {
           <Home />
           <section>
             <h1>Hello, Hector! love spaceballs</h1>
-            <MovieFetch />
           </section>
         </div>
       </>
