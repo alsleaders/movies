@@ -14,7 +14,7 @@ class Home extends Component {
           <Router>
             <Switch>
               <Route path="/" exact component={MovieFetch} />
-              <Route path="/movie/" component={Movie} />
+              <Route path="/movie/:movieId" component={MovieFetch} />
               <Route path="/cast" component={Cast} />
               <MovieFetch />
               <Movie />

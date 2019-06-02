@@ -7,6 +7,9 @@ import Cast from './Cast'
 function getRandomInt() {
   return Math.floor(Math.random() * Math.floor(20))
 }
+
+// let movieId = {this.props.match.params.movieId}
+
 class MovieFetch extends Component {
   state = {
     movies: [],
@@ -45,7 +48,7 @@ class MovieFetch extends Component {
       })
     //get the cast
     fetch(
-      'https://api.themoviedb.org/3/movie/458156/credits?api_key=1ee0e857f325866703436281f4225a69&language=en-US&page=1'
+      'https://api.themoviedb.org/3/movie/420817/credits?api_key=1ee0e857f325866703436281f4225a69&language=en-US&page=1'
     )
       .then(response => {
         console.log(response)
@@ -97,6 +100,7 @@ class MovieFetch extends Component {
 
         <div>
           {this.state.cast.map((cast, index) => {
+            console.log(cast)
             return (
               <main>
                 <Cast
