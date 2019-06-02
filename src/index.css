@@ -57,5 +57,8 @@ Example
 /* RandomMovie */
 
 /* Feature Movie */
-
+.MoviePoster {
+  display: flex;
+  width: 40%;
+}
 /* Footer */
