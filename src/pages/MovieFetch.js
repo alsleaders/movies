@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Movie from './Movie'
 import MoviePoster from '../components/MoviePoster'
+import Cast from './Cast'
 // import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 function getRandomInt() {
@@ -9,7 +10,8 @@ function getRandomInt() {
 class MovieFetch extends Component {
   state = {
     movies: [],
-    RandomMovie: {}
+    RandomMovie: {},
+    cast: []
   }
 
   componentDidMount() {
@@ -23,6 +25,7 @@ class MovieFetch extends Component {
       .then(results => {
         console.log(results)
         console.log(results.results)
+        console.log(results.cast)
         console.log(results.results[0].title)
         this.setState({
           movies: results.results
@@ -40,14 +43,33 @@ class MovieFetch extends Component {
         })
         console.log('RandomMOVIETEST', this.state.RandomMovie.title)
       })
+    //get the cast
+    fetch(
+      'https://api.themoviedb.org/3/movie/458156/credits?api_key=1ee0e857f325866703436281f4225a69&language=en-US&page=1'
+    )
+      .then(response => {
+        console.log(response)
+        return response.json()
+      })
+      .then(results => {
+        console.log(results.cast)
+        console.log(results.cast[0].character)
+        this.setState({
+          cast: results.cast
+        })
+        return results.cast
+      })
   }
+
   // this is going to need a map
   render() {
     return (
       <>
         <div>
           <main>
-            <h2>Would you like to go see this random</h2>
+            <h3>
+              Not sure what you want to see? Here's a random movie, now showing!
+            </h3>
             <Movie
               movie={this.state.RandomMovie.title}
               description={this.state.RandomMovie.overview}
@@ -68,6 +90,20 @@ class MovieFetch extends Component {
                 />
                 <MoviePoster poster={movie.poster_path} />
                 <hr />
+              </main>
+            )
+          })}
+        </div>
+
+        <div>
+          {this.state.cast.map((cast, index) => {
+            return (
+              <main>
+                <Cast
+                  key={index}
+                  actor={cast.name}
+                  character={cast.character}
+                />
               </main>
             )
           })}

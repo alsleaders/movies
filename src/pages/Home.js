@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Movie from './Movie'
 import NavBar from '../pages/NavBar'
 import MovieFetch from './MovieFetch'
+import Cast from './Cast'
 
 class Home extends Component {
   render() {
@@ -13,9 +14,11 @@ class Home extends Component {
           <Router>
             <Switch>
               <Route path="/" exact component={MovieFetch} />
-              <Route path="/movies/:movieId" component={Movie} />
+              <Route path="/movie/" component={Movie} />
+              <Route path="/cast" component={Cast} />
               <MovieFetch />
               <Movie />
+              <Cast />
             </Switch>
           </Router>
         </div>
