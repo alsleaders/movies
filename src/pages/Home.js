@@ -13,8 +13,8 @@ class Home extends Component {
         <div>
           <Router>
             <Switch>
-              <Route path="/" exact component={MovieFetch} />
-              <Route path="/movie/:movieId" component={MovieFetch} />
+              {/* <Route path="/" exact component={MovieFetch} /> */}
+              <Route path="/movie/:movieID" exact component={MovieFetch} />
               <Route path="/cast" component={Cast} />
               <MovieFetch />
               <Movie />
