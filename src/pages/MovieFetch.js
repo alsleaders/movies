@@ -47,6 +47,7 @@ class MovieFetch extends Component {
       <>
         <div>
           <main>
+            <h2>Would you like to go see this random</h2>
             <Movie
               movie={this.state.RandomMovie.title}
               description={this.state.RandomMovie.overview}
