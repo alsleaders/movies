@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Movie from './Movie'
 import MoviePoster from '../components/MoviePoster'
+// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 function getRandomInt() {
   return Math.floor(Math.random() * Math.floor(20))
@@ -51,6 +52,7 @@ class MovieFetch extends Component {
               description={this.state.RandomMovie.overview}
             />
             <MoviePoster poster={this.state.RandomMovie.poster_path} />
+            <hr />
           </main>
         </div>
 
@@ -64,6 +66,7 @@ class MovieFetch extends Component {
                   description={movie.overview}
                 />
                 <MoviePoster poster={movie.poster_path} />
+                <hr />
               </main>
             )
           })}
