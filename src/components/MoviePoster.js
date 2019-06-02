@@ -8,6 +8,7 @@ class MoviePoster extends Component {
         <img
           class="MoviePoster"
           src={`https://image.tmdb.org/t/p/w500/${this.props.poster}`}
+          alt={this.props.alt}
         />
       </div>
     )
