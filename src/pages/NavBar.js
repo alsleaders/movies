@@ -6,9 +6,7 @@ class NavBar extends Component {
     return (
       <>
         <div className="topnav">
-          <a className="active" href="#home">
-            Home
-          </a>
+          <Link to="/">Home</Link>
           <a href="#news">News</a>
           <a href="#contact">Contact</a>
           <a href="#about">About</a>

@@ -9,13 +9,12 @@ class Home extends Component {
   render() {
     return (
       <>
-        <NavBar />
         <div>
           <Router>
+            <NavBar />
             <Switch>
-              {/* <Route path="/" exact component={MovieFetch} /> */}
-              <Route path="/movie/:movieID" exact component={MovieFetch} />
-              <Route path="/cast" component={Cast} />
+              <Route path="/" exact component={MovieFetch} />
+              <Route path="/movie/:movieID" component={Movie} />
               <MovieFetch />
               <Movie />
               <Cast />

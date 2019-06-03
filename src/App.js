@@ -12,9 +12,6 @@ class App extends Component {
         <div className="Maincontainer">
           <Header />
           <Home />
-          <section>
-            <h1>Hello, Hector! love spaceballs</h1>
-          </section>
         </div>
       </>
     )
