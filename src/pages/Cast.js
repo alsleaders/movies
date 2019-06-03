@@ -5,8 +5,8 @@ class Cast extends Component {
   render() {
     return (
       <section>
-        <h3>Actor: {this.props.actor}</h3>
-        <h4>Character: {this.props.character}</h4>
+        <h4>Actor: {this.props.actor}</h4>
+        <p>Character: {this.props.character}</p>
       </section>
     )
   }

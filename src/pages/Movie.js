@@ -30,6 +30,7 @@ class Movie extends Component {
         return response.json()
       })
       .then(results => {
+        console.log({ results })
         this.setState({
           movie: results
         })
@@ -40,6 +41,11 @@ class Movie extends Component {
       <>
         <h2>{this.state.movie.title}</h2>
         <p>{this.state.movie.overview}</p>
+        <img
+          src={`https://image.tmdb.org/t/p/w500/${
+            this.state.movie.poster_path
+          }`}
+        />
         {this.state.cast.map((cast, index) => {
           console.log(cast)
           return (

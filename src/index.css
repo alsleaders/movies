@@ -24,12 +24,11 @@ body {
 Example
 /* Add a black background color to the top navigation */
 .topnav {
-  margin: 40%;
-  /* display: flex;
+  display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background: blue; */
+  background: black;
 }
 
 /* Style the links inside the navigation bar */
